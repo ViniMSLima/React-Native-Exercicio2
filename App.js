@@ -4,102 +4,44 @@ import { useState } from 'react';
 
 export default function App() {
   const [input, setInput] = useState('');
-  const [result, setResult] = useState(0);
 
   return (
       
     <View style={styles.container}>
 
-      <TextInput style={{height: "50px", width: "90%", borderWidth: "2px", borderColor: "black", borderRadius: "5px"}}
+      <TextInput style={{height: "100px", width: "90%", borderWidth: "2px", borderColor: "black", borderRadius: "5px", color: "white", fontSize: "100px", marginTop: "200px", fontFamily: "sans-serif"}}
       value = {input} 
       onChangeText={(text) => setInput(text)}
       />
-
+      
       <View style={{flexDirection: 'row'}}>
 
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '+')}
+          style={[styles.button, {backgroundColor: "lightgrey"}]}
+          onPress={() => setInput('')}
           >
-          <Text style={styles.buttonText}>+</Text>
+          <Text style={styles.buttonText}>C</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '-')}
+          style={[styles.button, {backgroundColor: "lightgrey"}]}
+          onPress={() => setInput(input + "*(-1)")}
           >
-          <Text style={styles.buttonText}>-</Text>
+          <Text style={styles.buttonText}>±</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.button}
+          style={[styles.button, {backgroundColor: "lightgrey"}]}
+          onPress={() => setInput(input * 100)}
+          >
+          <Text style={styles.buttonText}>%</Text>
+        </TouchableOpacity>
+     
+        <TouchableOpacity
+          style={[styles.button , {backgroundColor: "orange"}]}
           onPress={() => setInput(input + '/')}
           >
           <Text style={styles.buttonText}>/</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '*')}
-          >
-          <Text style={styles.buttonText}>*</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(eval(input))}
-          >
-          <Text style={styles.buttonText}>=</Text>
-        </TouchableOpacity>
-
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '1')}
-          >
-          <Text style={styles.buttonText}>1</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '2')}
-          >
-          <Text style={styles.buttonText}>2</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '3')}
-          >
-          <Text style={styles.buttonText}>3</Text>
-        </TouchableOpacity>
-
-      </View>
-
-      <View style={{flexDirection: 'row'}}>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '4')}
-          >
-          <Text style={styles.buttonText}>4</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '5')}
-          >
-          <Text style={styles.buttonText}>5</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setInput(input + '6')}
-          >
-          <Text style={styles.buttonText}>6</Text>
         </TouchableOpacity>
 
       </View>
@@ -127,15 +69,43 @@ export default function App() {
           <Text style={styles.buttonText}>9</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+          style={[styles.button , {backgroundColor: "orange"}]}
+          onPress={() => setInput(input + '*')}
+          >
+          <Text style={styles.buttonText}>x</Text>
+        </TouchableOpacity>
+
       </View>
 
       <View style={{flexDirection: 'row'}}>
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => setInput(input + '0')}
+          onPress={() => setInput(input + '4')}
           >
-          <Text style={styles.buttonText}>0</Text>
+          <Text style={styles.buttonText}>4</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => setInput(input + '5')}
+          >
+          <Text style={styles.buttonText}>5</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => setInput(input + '6')}
+          >
+          <Text style={styles.buttonText}>6</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: "orange"}]}
+          onPress={() => setInput(input + '-')}
+          >
+          <Text style={styles.buttonText}>-</Text>
         </TouchableOpacity>
 
       </View>
@@ -143,21 +113,59 @@ export default function App() {
       <View style={{flexDirection: 'row'}}>
 
         <TouchableOpacity
-          style={styles.button2}
-          onPress={() => setInput('')}
+          style={styles.button}
+          onPress={() => setInput(input + '1')}
           >
-          <Text style={styles.buttonText}>Limpar</Text>
+          <Text style={styles.buttonText}>1</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.button2}
+          style={styles.button}
+          onPress={() => setInput(input + '2')}
           >
-          <Text style={styles.buttonText}>Historico</Text>
+          <Text style={styles.buttonText}>2</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => setInput(input + '3')}
+          >
+          <Text style={styles.buttonText}>3</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: "orange"}]}
+          onPress={() => setInput(input + '+')}
+          >
+          <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
 
       </View>
 
-      
+      <View style={{flexDirection: 'row'}}>
+
+        <TouchableOpacity
+          style={styles.button3}
+          onPress={() => setInput(input + '0')}
+          >
+          <Text style={styles.buttonText3}>0</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => setInput(input + '.')}
+          >
+          <Text style={styles.buttonText}>.</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: "orange"}]}
+          onPress={() => setInput(eval(input))}
+          >
+          <Text style={styles.buttonText}>=</Text>
+        </TouchableOpacity>
+
+      </View>      
 
       <StatusBar style="auto" />
     </View>
@@ -167,23 +175,21 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: "lightgrey"
     
   },
 
   button: {
-    width: "30px", 
+    width: "85px", 
     backgroundColor: "grey",
-    borderRadius: "5px",
+    borderRadius: "50%",
     alignContent: 'center', 
     justifyContent: "center",
-    marginTop: "10px",
+    marginBottom: "4px",
     margin: "5px",
-    height: "30px",
-    backgroundColor: "white"
+    height: "85px"
   },
 
   buttonText: {
@@ -191,8 +197,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%", 
     textAlign: "center",
-    color: "black",
-    fontSize: "20px",
+    color: "white",
+    fontSize: "35px",
     marginBottom: "5px"
   },
 
@@ -203,7 +209,24 @@ const styles = StyleSheet.create({
     alignContent: 'center', 
     justifyContent: "center",
     marginTop: "10px",
-    margin: "5px",
+    margin: "2px",
     height: "30px"
+  },
+
+  button3: {
+    width: "180px", 
+    backgroundColor: "grey",
+    borderRadius: "50px",
+    marginTop: "10px",
+    margin: "5px",
+    height: "85px",
+    justifyContent: "center"
+  },
+
+  buttonText3: {
+    marginLeft: "35px",
+    color: "white",
+    fontSize: "35px",
+    marginBottom: "5px"
   }
 });
