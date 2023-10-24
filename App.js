@@ -9,7 +9,7 @@ export default function App() {
       
     <View style={styles.container}>
 
-      <TextInput style={{height: "100px", width: "90%", borderWidth: "2px", borderColor: "black", borderRadius: "5px", color: "white", fontSize: "100px", marginTop: "200px", fontFamily: "sans-serif"}}
+      <TextInput style={{height: "100px", width: "90%", borderWidth: "2px", borderColor: "black", borderRadius: "5px", color: "white", fontSize: "100px", marginTop: "200px", fontFamily: "Roboto", fontStyle: "italic"}}
       value = {input} 
       onChangeText={(text) => setInput(text)}
       />
